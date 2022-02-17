@@ -6,5 +6,7 @@
 ```
 
 ## Arguments
+```
 items: Array | List of items
 select: string | Displayed text
+```
