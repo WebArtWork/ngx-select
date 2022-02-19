@@ -235,3 +235,9 @@ $c-white: #ffffff;
         }
     }
 }
+
+.disabled {
+    // pointer-events: none;
+    color: gray;
+    background-color: #DCDCDC;
+}
