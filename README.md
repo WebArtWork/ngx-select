@@ -2,11 +2,15 @@
 
 ## Usage
 ```html
-<wselect [items]="['Item1', 'Item2']" [select]="'Choose an item..'"></wselect>
+<wselect [items]="items" placeholder="Choose an item.." [multiple]="true" [searchable]="true" [(model)]="value.select" (modelChange)="test()"></wselect>
 ```
 
 ## Arguments
 ```
-items: Array | List of items
-select: string | Displayed text
+items: Array | List of items [{name: 'Item #1', value: 'item1}, {name: 'Item #2', value: 'item2}]
+placeholder: string | Placeholder for select
+multiple: boolean | Multiple mode
+searchable: boolean | Searchable mode
+model: string | Array | Returns the selected item / items
+modelChange | Called when model changes
 ```
