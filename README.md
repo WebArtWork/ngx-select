@@ -9,7 +9,7 @@
 ```
 items: Array | List of items [{name: 'Item #1', value: 'item1}, {name: 'Item #2', value: 'item2}]
 placeholder: string | Placeholder for select
-multiple: boolean | Multiple mode
+multiple: boolean | Multiselect mode
 searchable: boolean | Searchable mode
 model: string | Array | Returns the selected item / items
 modelChange | Called when model changes
