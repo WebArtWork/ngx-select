@@ -1,11 +1,16 @@
-<div class="w-select">
+{{multiple}}
+<div class="w-select" style="color: black;">
 	<div class="w-select__label" *ngIf="label">{{label}}</div>
 	<div class="w-select__body" [class._active]="selectShow" (clickOutside)="selectShow=false">
 		<div (click)="selectShow=!selectShow; focus_search();" class="w-select__header">
 			<ng-container [ngTemplateOutlet]="t_view ? t_view : defaultView"></ng-container>
 			<ng-template #defaultView>
 				<div class="w-select__text">
-					<div class="text-overflow">{{_selected	|| selected}}</div>
+					<div class="text-overflow" *ngIf="multiple">
+						<div *ngIf="!_values.length">Select</div>
+						<div *ngFor="let __selected of _values">{{__selected}}</div>
+					</div>
+					<div class="text-overflow" *ngIf="!multiple">{{_selected || selected}}</div>
 				</div>
 			</ng-template>
 		</div>
@@ -31,7 +36,7 @@
 				<div class="popup-block__empty-search" *ngIf="!(items|search:search).length">Nothing was found</div>
 			</div>
 			<ng-template #defaultItem let-item="item">
-				<div [class.disabled]="this._values.indexOf(item.value) != -1" class="item" (click)="item_onclick(item)">
+				<div [class.disabled]="this._values.indexOf(item.value) !== -1" class="item" (click)="item_onclick(item)">
 					<div class="item__text">{{item.name}}</div>
 				</div>
 			</ng-template>
