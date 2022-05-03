@@ -16,7 +16,7 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 })
 ```
 
-# Step 3: Single
+# Step 3.1: Single
 ### In order to use a single option, here is an example for you:
 ```
 <wselect 
@@ -28,7 +28,7 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 </wselect>
 ```
 
-# Step 4: Multiple
+# Step 3.2: Multiple
 ### In order to use a multiple option, here is an example for you:
 ```
 <wselect 
@@ -41,7 +41,7 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 </wselect> -->
 ```
 
-# Step 5: Multiple (obj)
+# Step 3.3: Multiple (obj)
 ### In order to use one option, from the finished object here is an example for you:
 ```
 <wselect 
