@@ -16,10 +16,7 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 })
 ```
 
-# Step 3: Importe SelectModule
-### In your user/page.module.ts you must import SelectModule:
-
-# Step 4: Single
+# Step 3: Single
 ### In order to use a single option, here is an example for you:
 ```
 <wselect 
@@ -31,7 +28,7 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 </wselect>
 ```
 
-# Step 5: Single
+# Step 4: Single
 ### In order to use a multiple option, here is an example for you:
 ```
 <wselect 
@@ -44,7 +41,7 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 </wselect> -->
 ```
 
-# Step 6: Single
+# Step 5: Single
 ### In order to use one option, from the finished object here is an example for you:
 ```
 <wselect 
