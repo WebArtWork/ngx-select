@@ -4,7 +4,7 @@
 ### In terminal root/client write:
 waw add ngx-select
 
-# Step 2: Importe SelectModule
+# Step 2: Import SelectModule
 ### In your user/page.module.ts you must import SelectModule:
 ```
 import { SelectModule } from 'src/app/modules/select/select.module';
