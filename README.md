@@ -49,7 +49,7 @@ import { SelectModule } from 'src/app/modules/select/select.module';
   [items]="vr.variables" 
   [select]="[vr.variables[0]]" 
   [multiple]="true">
-</wselect> -->
+</wselect>
 ```
 
 ## Inputs
@@ -67,3 +67,10 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 | t_view        | `any`                           | Template customization |
 | t_item        | `any`                           | Template customization |
 | t_search      | `any`                           | Template customization |
+
+## Examples of using placeholder
+```
+<wselect
+ placeholder="Placeholder">
+</wselect>
+```
