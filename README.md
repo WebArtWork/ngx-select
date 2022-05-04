@@ -56,7 +56,15 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 
 | Option        | Default                         | Description               |
 | ------------- |---------------------------------| --------------------------|
-| items         | `[]`                            | Array of strings, numbers or objects |
-| `_items`      | `{}`                            | Object of strings, numbers or objects to which `items`|
+| items         | `[]`                            | Objects which will be listed to selected from |
+| name          | `'name'`                        | Adds the attribute E to the object if it is not present|
 | value         | `_id`                           | This id of strings, numbers or objects to which `items` |
 | multiple      | `false`                         | Turns on the multiple mode |
+| selected      | `string`                        |  |
+| model         | `any`                           |  |
+| label         | `string`                        |  |
+| searchable    | `false`                         |  |
+| select        | `{}`                            |  |
+| t_view        | `any`                           |  |
+| t_item        | `any`                           |  |
+| t_search      | `any`                           |  |
