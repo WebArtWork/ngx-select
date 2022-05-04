@@ -6,8 +6,7 @@ import { Component, ElementRef, Input, TemplateRef, ViewChild, Output, EventEmit
 })
 export class SelectComponent implements OnInit {
 	@Output() update: EventEmitter<any> = new EventEmitter<any>();
-	@Input('placeholder') selected: string = ""
-	@Input() placeholder = '';
+	@Input() placeholder: string = ""
 	@Input() items: any = [];
 	public _items: any = {};
 	@Input() name = 'name';
@@ -53,7 +52,7 @@ export class SelectComponent implements OnInit {
 			} else {
 				this._names.push(item[this.name]);
 			}
-			this._selected = this._names.length == 0 ? this.selected : this._names.join(', ');
+			this._selected = this._names.length == 0 ? this.placeholder : this._names.join(', ');
 			this.modelChange.emit(this._values);
 		} else {
 			this._selected = item[this.name];
