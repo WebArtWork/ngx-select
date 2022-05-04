@@ -7,11 +7,11 @@ import { Component, ElementRef, Input, TemplateRef, ViewChild, Output, EventEmit
 export class SelectComponent implements OnInit {
 	@Output() update: EventEmitter<any> = new EventEmitter<any>();
 	@Input('placeholder') selected: string = ""
+	@Input() placeholder = '';
 	@Input() items: any = [];
 	public _items: any = {};
 	@Input() name = 'name';
 	@Input() value = '_id';
-	@Input() model: any;
 	@Input() multiple: boolean = false;
 	@Input() label: string = '';
 	@Input() searchable: boolean = false;
@@ -54,12 +54,11 @@ export class SelectComponent implements OnInit {
 				this._names.push(item[this.name]);
 			}
 			this._selected = this._names.length == 0 ? this.selected : this._names.join(', ');
-			this.model = this._values;
+			this.modelChange.emit(this._values);
 		} else {
 			this._selected = item[this.name];
 			this.selectShow = false;
-			this.model = item;
+			this.modelChange.emit(item);
 		}
-		this.modelChange.emit(this.model);
 	}
 }
