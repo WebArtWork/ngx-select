@@ -69,6 +69,7 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 | t_item        | `any`                           | Template customisation |
 | t_search      | `any`                           | Template customisation |
 
+
 ## Examples of using inputs
 ### Placeholder
 ```
