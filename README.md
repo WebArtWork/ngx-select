@@ -68,3 +68,17 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 | t_view        | `any`                           | Template customisation |
 | t_item        | `any`                           | Template customisation |
 | t_search      | `any`                           | Template customisation |
+
+## Examples of using inputs
+### Placeholder
+```
+<wselect
+ [placeholder]="'Placeholder'">
+</wselect>
+```
+### t_view
+```
+<wselect [view]="view">
+ <ng-template #view>Hello World</ng-template>
+</wselect>
+```
