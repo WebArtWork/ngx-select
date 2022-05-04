@@ -60,7 +60,6 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 | name          | `'name'`                        | Adds the attribute E to the object if it is not present|
 | value         | `_id`                           | This id of strings, numbers or objects to which `items` |
 | multiple      | `false`                         | Turns on the multiple mode |
-| selected      | `string`                        | = |
 | placeholder   | `any`                           | Placeholder for the select |
 | label         | `string`                        | Label of the select |
 | searchable    | `false`                         | Include or not |
