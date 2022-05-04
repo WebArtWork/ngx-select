@@ -60,11 +60,11 @@ import { SelectModule } from 'src/app/modules/select/select.module';
 | name          | `'name'`                        | Adds the attribute E to the object if it is not present|
 | value         | `_id`                           | This id of strings, numbers or objects to which `items` |
 | multiple      | `false`                         | Turns on the multiple mode |
-| selected      | `string`                        |  |
-| model         | `any`                           |  |
-| label         | `string`                        |  |
-| searchable    | `false`                         |  |
-| select        | `{}`                            |  |
-| t_view        | `any`                           |  |
-| t_item        | `any`                           |  |
-| t_search      | `any`                           |  |
+| selected      | `string`                        | = |
+| placeholder   | `any`                           | Placeholder for the select |
+| label         | `string`                        | Label of the select |
+| searchable    | `false`                         | Include or not |
+| select        | `{}`                            | Preselect Object |
+| t_view        | `any`                           | Template customisation |
+| t_item        | `any`                           | Template customisation |
+| t_search      | `any`                           | Template customisation |
