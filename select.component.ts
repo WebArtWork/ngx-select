@@ -6,41 +6,70 @@ import { Component, ElementRef, Input, TemplateRef, ViewChild, Output, EventEmit
 })
 export class SelectComponent implements OnInit {
 	@Output() update: EventEmitter<any> = new EventEmitter<any>();
-	@Input() placeholder: string = ""
+
+	@Input() placeholder: string = "";
+
 	@Input() items: any = [];
-	public _items: any = {};
+
+	_items: any = {};
+
+	@Input() disabled = false;
+
 	@Input() name = 'name';
-	@Input() value = '_id';
+
+	@Input() value = 'id';
+
 	@Input() multiple: boolean = false;
+
 	@Input() label: string = '';
+
 	@Input() searchable: boolean = false;
-	@Output() modelChange = new EventEmitter()
-	public _values: any = [];
-	public _names: any = [];
-	public _selected: string;
-	public selectShow: any;
+
+	@Output() modelChange = new EventEmitter();
+
+	_values: any = [];
+
+	_names: any = [];
+
+	_selected: string;
+
+	selectShow: any;
+
 	@Input('select') select: any = {};
+
 	@Input('view') t_view: TemplateRef<any>;
+
 	@Input('item') t_item: TemplateRef<any>;
+
 	@Input('search') t_search: TemplateRef<any>;
-	public search: string = '';
+
+	search: string = '';
+
 	@ViewChild('e_search', { static: false }) e_search: ElementRef;
-	focus_search() {
+
+	focus_search(): void {
 		this.search = '';
 		if (!this.searchable || this.t_search) return;
-		if (!this.e_search) {
-			return setTimeout(this.focus_search.bind(this), 100);
+		if (this.e_search) {
+			this.e_search.nativeElement.focus();
+		} else {
+			setTimeout(this.focus_search.bind(this), 100);
 		}
-		this.e_search.nativeElement.focus();
 	}
-	constructor() { }
-	ngOnInit() {
+
+	ngOnInit(): void {
 		for (let i = 0; i < this.items.length; i++) {
-			this._items[this.items[i]._id] = this.items[i];
+			if (typeof this.items[i] === 'string') {
+				this.items[i] = {
+					name: this.items[i],
+					id: this.items[i]
+				}
+			}
+			this._items[this.items[i].id] = this.items[i];
 		}
-		console.log(this._items);
 	}
-	item_onclick(item) {
+
+	item_onclick(item: any): void {
 		if (this.multiple) {
 			if (this._values.indexOf(item[this.value]) != -1) {
 				this._values.splice(this._values.indexOf(item[this.value]), 1);

@@ -7,7 +7,7 @@
 				<div class="w-select__text">
 					<div class="text-overflow" *ngIf="multiple">
 						<div *ngIf="!_values.length">No values</div>
-						<div *ngFor="let _id of _values">{{_items[_id][name]}}</div>
+						<div *ngFor="let id of _values">{{_items[id][name]}}</div>
 					</div>
 					<div class="text-overflow" *ngIf="!multiple">{{_selected || placeholder}}</div>
 				</div>
@@ -36,8 +36,11 @@
 				</ng-template>
 			</div>
 			<div class="popup-block">
-				<ng-container *ngFor="let _item of (items|search:search)" [ngTemplateOutlet]="t_item ? t_item : defaultItem"
-					[ngTemplateOutletContext]="{item: _item}"></ng-container>
+				<ng-container
+					*ngFor="let _item of (items|search:search)"
+					[ngTemplateOutlet]="t_item ? t_item : defaultItem"
+					[ngTemplateOutletContext]="{item: _item}"
+				></ng-container>
 				<div class="popup-block__empty-search" *ngIf="!(items|search:search).length">Nothing was found</div>
 			</div>
 			<ng-template #defaultItem let-item="item">
