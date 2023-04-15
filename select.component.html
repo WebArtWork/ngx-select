@@ -2,6 +2,16 @@
 	<div class="w-select__label" *ngIf="label">{{label}}</div>
 	<div class="w-select__body" [class._active]="selectShow" (clickOutside)="selectShow=false">
 		<div (click)="selectShow=!selectShow; focus_search();" class="w-select__header">
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_137_2)">
+				<path d="M5.0001 5C5.0001 3.84766 5.72332 2.85156 6.78581 2.30859V10H8.92867V1.875H11.0715V10H13.2144V2.30859C14.2769 2.85156 15.0001 3.84766 15.0001 5V10H17.143V5C17.143 2.23828 14.5849 0 11.4287 0H8.57153C5.41528 0 2.85724 2.23828 2.85724 5V10H5.0001V5ZM19.9242 13.3555L19.4465 12.1055C19.2501 11.5937 18.7055 11.25 18.0894 11.25H1.90635C1.29028 11.25 0.745637 11.5937 0.549208 12.1055L0.0715298 13.3555C-0.232042 14.1641 0.455458 15 1.42867 15V19.375C1.42867 19.7188 1.7501 20 2.14296 20H3.57153C3.96439 20 4.28582 19.7188 4.28582 19.375V15H15.7144V19.375C15.7144 19.7188 16.0358 20 16.4287 20H17.8572C18.2501 20 18.5715 19.7188 18.5715 19.375V15C19.5447 15 20.2322 14.1641 19.9242 13.3555Z" fill="#666666"/>
+				</g>
+				<defs>
+				<clipPath id="clip0_137_2">
+				<rect width="20" height="20" fill="white"/>
+				</clipPath>
+				</defs>
+			</svg>	
 			<ng-container [ngTemplateOutlet]="t_view ? t_view : defaultView"></ng-container>
 			<ng-template #defaultView>
 				<div class="w-select__text">
