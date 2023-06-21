@@ -27,7 +27,7 @@ export class SelectComponent implements OnInit {
 
 	@Input() name = 'name';
 
-	@Input() value = 'id';
+	@Input() value = '_id';
 
 	@Input() multiple = false;
 
@@ -73,12 +73,23 @@ export class SelectComponent implements OnInit {
 		for (let i = 0; i < this.items.length; i++) {
 			if (typeof this.items[i] === 'string') {
 				this.items[i] = {
-					name: this.items[i],
-					id: this.items[i]
-				};
+					name: this.items[i]
+				}
+				this.items[i][this.value] = this.items[i].name;
 			}
 
-			this._items[this.items[i].id] = this.items[i];
+			this._items[this.items[i][this.value]] = this.items[i];
+		}
+
+		if (this.multiple) {
+			this._selected =
+				this._names.length == 0
+					? this.placeholder
+					: this._names.join(', ');
+		} else {
+			this._selected = this._items[this.select]
+				? this._items[this.select][this.name]
+				: this.select;
 		}
 	}
 
@@ -107,7 +118,7 @@ export class SelectComponent implements OnInit {
 
 			this.selectShow = false;
 
-			this.modelChange.emit(item);
+			this.modelChange.emit(item[this.value]);
 		}
 	}
 }
