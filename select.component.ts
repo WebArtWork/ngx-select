@@ -82,10 +82,7 @@ export class SelectComponent implements OnInit {
 		}
 
 		if (this.multiple) {
-			this._selected =
-				this._names.length == 0
-					? this.placeholder
-					: this._names.join(', ');
+			this._values = this.select;
 		} else {
 			this._selected = this._items[this.select]
 				? this._items[this.select][this.name]

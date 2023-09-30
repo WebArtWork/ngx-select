@@ -34,10 +34,11 @@
 			<ng-template #defaultView>
 				<div class="w-select__text">
 					<div class="text-overflow" *ngIf="multiple">
-						<div *ngIf="!_values.length">No values</div>
-						<div *ngFor="let id of _values">
-							{{_items[id][name]}}
-						</div>
+						<div *ngIf="!_values.length">{{placeholder}}</div>
+						<span *ngFor="let id of _values; index as i">
+							<span *ngIf="i">, </span>
+							<span>{{_items[id][name]}}</span>
+						</span>
 					</div>
 					<div class="text-overflow" *ngIf="!multiple">
 						{{_selected || placeholder}}
@@ -105,7 +106,7 @@
 				></ng-container>
 				<div
 					class="popup-block__empty-search"
-					*ngIf="!(items|search:search).length"
+					*ngIf="!(items|search:search)?.length"
 				>
 					Nothing was found
 				</div>
