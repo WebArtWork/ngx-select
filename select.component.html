@@ -37,11 +37,11 @@
 						<div *ngIf="!_values.length">{{placeholder}}</div>
 						<span *ngFor="let id of _values; index as i">
 							<span *ngIf="i">, </span>
-							<span>{{_items[id][name]}} <i class="material-icons avatar__icon" (click)="_values.splice(i, 1)">close</i></span>
+							<span *ngIf="_items[id]">{{_items[id][name]}} <i class="material-icons avatar__icon" (click)="_values.splice(i, 1); modelChange.emit(_values)">close</i></span>
 						</span>
 					</div>
 					<div class="text-overflow" *ngIf="!multiple">
-						{{_selected || placeholder}} 
+						{{_selected || placeholder}}
 					</div>
 				</div>
 			</ng-template>
