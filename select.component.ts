@@ -35,6 +35,8 @@ export class SelectComponent implements OnInit {
 
 	@Input() searchable = false;
 
+	@Input() searchableBy = 'name';
+
 	@Output() modelChange = new EventEmitter();
 
 	_values: any = [];
@@ -45,7 +47,7 @@ export class SelectComponent implements OnInit {
 
 	selectShow: any;
 
-	@Input() select: any = {};
+	@Input() select: any;
 
 	@Input('view') t_view: TemplateRef<any>;
 
@@ -82,7 +84,7 @@ export class SelectComponent implements OnInit {
 		}
 
 		if (this.multiple) {
-			this._values = this.select;
+			this._values = this.select || [];
 		} else {
 			this._selected = this._items[this.select]
 				? this._items[this.select][this.name]
