@@ -48,6 +48,13 @@
 		</div>
 		<div
 			class="w-select__arrow"
+			*ngIf="clearable"
+			(click)="clear()"
+		>
+			<span class="material-icons">close</span>
+		</div>
+		<div
+			class="w-select__arrow"
 			[class._active]="selectShow"
 			(click)="selectShow=!selectShow; focus_search(); "
 		>

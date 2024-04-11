@@ -25,6 +25,19 @@ export class SelectComponent implements OnInit {
 
 	@Input() disabled = false;
 
+	@Input() clearable = false;
+	clear() {
+		if (this.multiple) {
+			this._values = [];
+
+			this.modelChange.emit(this._values);
+		} else {
+			this._selected = '';
+
+			this.modelChange.emit('');
+		}
+	}
+
 	@Input() name = 'name';
 
 	@Input() value = '_id';
