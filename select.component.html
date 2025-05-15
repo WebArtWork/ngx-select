@@ -68,7 +68,11 @@
 		</div>
 
 		<!-- Clearable icon -->
-		<div class="w-select__arrow" *ngIf="clearable" (click)="clear()">
+		<div
+			*ngIf="clearable && _selected"
+			class="w-select__arrow"
+			(click)="clear()"
+		>
 			<span class="material-icons">close</span>
 		</div>
 
